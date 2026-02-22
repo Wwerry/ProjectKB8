@@ -1,0 +1,20 @@
+## Сборка и временные файлы
+bin/
+obj/
+
+## Настройки IDE
+.idea/
+.vs/
+*.user
+*.userosscache
+*.sln.doccache
+
+## Файлы Rider
+.shelf/
+workspace.xml
+
+## Прочее
+*.exe
+*.dll
+*.pdb
+*.suo
