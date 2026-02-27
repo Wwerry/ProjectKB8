@@ -7,7 +7,7 @@ namespace ProjectKB8
         public string Stack { get; set; }
         public string Skill { get; set; }
 
-        public Developer(string skill, string stack)
+        public Developer(string skill, string stack, int age, string name, int salary) : base(age, name, salary)
         {
             Skill = skill;
             Stack = stack;
