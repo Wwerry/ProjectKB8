@@ -2,7 +2,7 @@
 
 namespace ProjectKB8
 {
-    class Manager : Employee
+    public class Manager : Employee
     {
         public int KPI { get; set; }
         public string Project { get; set; }

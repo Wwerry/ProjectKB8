@@ -1,26 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ProjectKB8
 {
-    public class Program
+    class Program
     {
-        public static void Main()
+        static void Main(string[] args)
         {
-            Developer Dev = new Developer("крутой", "python", 17, "Антоха", 50000);
-            Dev.PerformDuties();
-            
-            Manager Man = new Manager(1, "умный дом", 19, "Колян", 10000);
-            Man.PerformDuties();
+            // Департамент 1
+            IDepartment salesDep = new Department("Работа с клиентами");
 
-            Department Dep = new Department();
-            Dep.AddEmployee(Dev);
-            Dep.AddEmployee(Man);
-            
-            Console.WriteLine(" ");
-            
-            Dep.DeleteEmployee(Man);
-            Dep.DisplayInfo();
+            salesDep.AddEmployee(new Manager(1, "Интернет-магазин", 21, "Костя", 9999));
+            salesDep.AddEmployee(new Manager(1, "CRM система", 20, "Ольга", 9999));
+            salesDep.AddClient(new Client("Ирина", "Кодим ООО"));
+            salesDep.AddClient(new Client("Сергей", "ИП Иванов"));
+
+            // Департамент 2
+            IDepartment devDep = new Department("Разработка");
+
+            devDep.AddEmployee(new Developer("крутой", "C# / .NET", 15, "Антоха", 9999));
+            devDep.AddEmployee(new Developer("быстрый", "python", 16, "Вован", 9999));
+            devDep.AddEmployee(new Manager(1, "ToDo", 17, "Колян", 9999));
+
+            // Выводим оба департамента
+            salesDep.Show();
+            devDep.Show();
         }
     }
 }

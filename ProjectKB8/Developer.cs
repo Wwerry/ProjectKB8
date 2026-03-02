@@ -2,7 +2,7 @@
 
 namespace ProjectKB8
 {
-    class Developer : Employee
+    public class Developer : Employee
     {
         public string Stack { get; set; }
         public string Skill { get; set; }

@@ -2,7 +2,7 @@
 
 namespace ProjectKB8
 {
-    abstract class Employee
+    public abstract class Employee
     {
         public int Age { get; set; }
         public string Name { get; set; }

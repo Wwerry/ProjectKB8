@@ -1,27 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ProjectKB8 
+namespace ProjectKB8
 {
-    class Department
+    public class Department : IDepartment
     {
-        public List<Employee> Employees { get; set; } = new List<Employee>();
-        public void AddEmployee(Employee employee) 
+        public string Name { get; }
+
+        private readonly List<Employee> employees = new List<Employee>();
+        private readonly List<Client> clients = new List<Client>();
+
+        public Department(string name)
         {
-            Employees.Add(employee);
+            Name = name;
         }
-        
-        public void DeleteEmployee(Employee employee)
+
+        public void AddEmployee(Employee emp) => employees.Add(emp);
+        public void AddClient(Client client) => clients.Add(client);
+
+        public void Show()
         {
-            Employees.Remove(employee);
-        }
-        
-        public void DisplayInfo()
-        {
-            foreach (var employee in Employees)
-            {
-                employee.PerformDuties();
-            }
+            Console.WriteLine($"\nОтдел: {Name}");
+            Console.WriteLine("Сотрудники:");
+            foreach (var e in employees) e.PerformDuties();
+
+            Console.WriteLine("Клиенты:");
+            foreach (var c in clients) c.ShowInfo();
+
+            Console.WriteLine("-------------------");
         }
     }
 }
