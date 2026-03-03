@@ -2,7 +2,7 @@
 
 namespace ProjectKB8
 {
-    public class Developer : Employee
+    public class Developer : Employee, IDeveloperAccessible
     {
         public string Stack { get; set; }
         public string Skill { get; set; }
@@ -13,6 +13,10 @@ namespace ProjectKB8
             Stack = stack;
         }
 
+        public void EnterDevRoom()
+        {
+            // Реализация
+        }
         public override void PerformDuties()
         {
             Console.WriteLine($"hello I am a Developer. My skill is {Skill} and my stack is {Stack}");

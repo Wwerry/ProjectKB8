@@ -2,7 +2,7 @@
 
 namespace ProjectKB8
 {
-    public class Manager : Employee
+    public class Manager : Employee, IManagerAccessible
     {
         public int KPI { get; set; }
         public string Project { get; set; }
@@ -10,6 +10,16 @@ namespace ProjectKB8
         {
             KPI = kpi;
             Project = project;
+        }
+
+        public void EnterHall()
+        {
+            // Реализация
+        }
+
+        public void EnterDevRoom()
+        {
+            // Реализация
         }
         
         public override void PerformDuties()

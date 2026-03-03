@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProjectKB8
 {
-    public class Department : IDepartment
+    public class Department
     {
         public string Name { get; }
 
@@ -14,7 +14,7 @@ namespace ProjectKB8
         {
             Name = name;
         }
-
+        
         public void AddEmployee(Employee emp) => employees.Add(emp);
         public void AddClient(Client client) => clients.Add(client);
 
