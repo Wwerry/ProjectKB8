@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11512.155 d18.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectKB8", "ProjectKB8.csproj", "{9C3E7DA1-FB7E-E959-832A-AEAD40075E21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C3E7DA1-FB7E-E959-832A-AEAD40075E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C3E7DA1-FB7E-E959-832A-AEAD40075E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C3E7DA1-FB7E-E959-832A-AEAD40075E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C3E7DA1-FB7E-E959-832A-AEAD40075E21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B16061F-3551-40FD-AAD7-08C71D3E2E8B}
+	EndGlobalSection
+EndGlobal

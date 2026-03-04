@@ -15,7 +15,7 @@ namespace ProjectKB8
 
         public void EnterDevRoom()
         {
-            // Реализация
+            Console.WriteLine($"Developer {Name} entered the dev room.");
         }
         public override void PerformDuties()
         {

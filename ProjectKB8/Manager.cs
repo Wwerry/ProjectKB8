@@ -14,12 +14,12 @@ namespace ProjectKB8
 
         public void EnterHall()
         {
-            // Реализация
+            Console.WriteLine($"Manager {Name} entered the hall.");
         }
 
         public void EnterDevRoom()
         {
-            // Реализация
+            Console.WriteLine($"Manager {Name} entered the dev room.");
         }
         
         public override void PerformDuties()
