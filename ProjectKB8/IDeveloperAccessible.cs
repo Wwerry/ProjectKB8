@@ -1,6 +1,6 @@
 ﻿namespace ProjectKB8;
 
-public interface IDeveloperAccessible
+public interface IDevRoomAccessible
 {
     void EnterDevRoom();
 }

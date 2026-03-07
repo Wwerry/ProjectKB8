@@ -1,6 +1,6 @@
 ﻿namespace ProjectKB8;
 
-public class Client
+public class Client : IHallAccessible
 {
     public string Name { get; set; }
     public string Company { get; set; }

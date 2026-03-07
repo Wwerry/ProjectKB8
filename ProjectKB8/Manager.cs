@@ -2,7 +2,7 @@
 
 namespace ProjectKB8
 {
-    public class Manager : Employee, IManagerAccessible
+    public class Manager : Employee, IHallAccessible, IDevRoomAccessible
     {
         public int KPI { get; set; }
         public string Project { get; set; }

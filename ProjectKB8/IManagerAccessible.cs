@@ -1,7 +1,6 @@
 ﻿namespace ProjectKB8;
 
-public interface IManagerAccessible
+public interface IHallAccessible
 {
     void EnterHall();
-    void EnterDevRoom();
 }

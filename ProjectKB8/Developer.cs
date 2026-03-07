@@ -2,7 +2,7 @@
 
 namespace ProjectKB8
 {
-    public class Developer : Employee, IDeveloperAccessible
+    public class Developer : Employee, IDevRoomAccessible
     {
         public string Stack { get; set; }
         public string Skill { get; set; }

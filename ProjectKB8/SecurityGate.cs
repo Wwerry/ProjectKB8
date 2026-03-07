@@ -1,36 +1,28 @@
 ﻿namespace ProjectKB8;
 
-public class SecurityGate
+public static class SecurityGate
 {
     public static void CheckHallAccess(object person)
     {
-        if (person is IManagerAccessible man)
+        if (person is IHallAccessible accessible)
         {
-            man.EnterHall();
-        }
-        else if (person is Client cli)
-        {
-            cli.EnterHall();
+            accessible.EnterHall();
         }
         else
         {
-            Console.WriteLine("Доступ запрещен: В холл могут входить только менеджеры и клиенты.");
+            Console.WriteLine($"Access to Hall is prohibited for: {person?.GetType().Name ?? "null"}");
         }
     }
 
     public static void CheckDevRoomAccess(object person)
     {
-        if (person is IManagerAccessible man)
+        if (person is IDevRoomAccessible accessible)
         {
-            man.EnterDevRoom();
-        }
-        else if (person is IDeveloperAccessible dev)
-        {
-            dev.EnterDevRoom();
+            accessible.EnterDevRoom();
         }
         else
         {
-            Console.WriteLine("Доступ запрещен: В комнату разработки могут входить только программисты менеджеры.");
+            Console.WriteLine($"Access to DevRoom is prohibited for: {person?.GetType().Name ?? "null"}");
         }
     }
 }
