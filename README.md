@@ -4,7 +4,7 @@
 Учебный проект для отработки интерфейсов и принципов ООП.
 
 ## UML-диаграмма классов
-![class diagram](/images/img.png)
+![class diagram](https://github.com/Wwerry/ProjectKB8/blob/main/images/class_diagram.png)
 
 ## Основные возможности
 
