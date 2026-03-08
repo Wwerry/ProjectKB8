@@ -19,6 +19,8 @@ namespace ProjectKB8
         
         public void AddEmployee(Employee emp) => employees.Add(emp);
         public void AddClient(Client client) => clients.Add(client);
+        public void deleteEmployee(Employee emp) => employees.Remove(emp);
+        public void deleteClient(Client client) => clients.Remove(client);
         
         public void ShowHumansInHall()
         {
