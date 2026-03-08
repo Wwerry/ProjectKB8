@@ -10,7 +10,7 @@ public static class SecurityGate
 
             if (person is IDevRoomAccessible p && dept.humansInDevRoom.Remove(p))
             {
-                Console.WriteLine($"- {p.GetType().Name} {p.Name} перешел из DevRoom в Hall");
+                Console.WriteLine($"- {p.GetType().Name} {p.Name} moved from DevRoom to Hall");
             }
 
             accessible.EnterHall();
@@ -30,7 +30,7 @@ public static class SecurityGate
 
             if (person is IHallAccessible p && dept.humansInHall.Remove(p))
             {
-                Console.WriteLine($"- {p.GetType().Name} {p.Name} перешел из Hall в DevRoom");
+                Console.WriteLine($"- {p.GetType().Name} {p.Name} moved from Hall to DevRoom");
             }
 
             accessible.EnterDevRoom();
