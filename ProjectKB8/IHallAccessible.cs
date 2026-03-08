@@ -2,5 +2,6 @@
 
 public interface IHallAccessible
 {
+    string Name { get; }
     void EnterHall();
 }

@@ -2,27 +2,61 @@
 
 public static class SecurityGate
 {
-    public static void CheckHallAccess(object person)
+    public static void EnterHall(object person, Department dept)
     {
         if (person is IHallAccessible accessible)
         {
+            if (dept.humansInHall.Contains(accessible)) return;
+
+            if (person is IDevRoomAccessible p && dept.humansInDevRoom.Remove(p))
+            {
+                Console.WriteLine($"- {p.GetType().Name} {p.Name} перешел из DevRoom в Hall");
+            }
+
             accessible.EnterHall();
+            dept.humansInHall.Add(accessible);
         }
         else
         {
-            Console.WriteLine($"Access to Hall is prohibited for: {person?.GetType().Name ?? "null"}");
+            Console.WriteLine($"Access to DevRoom is prohibited for: {getNameEntrant(person)}");
         }
     }
 
-    public static void CheckDevRoomAccess(object person)
+    public static void EnterDevRoom(object person, Department dept)
     {
         if (person is IDevRoomAccessible accessible)
         {
+            if (dept.humansInDevRoom.Contains(accessible)) return;
+
+            if (person is IHallAccessible p && dept.humansInHall.Remove(p))
+            {
+                Console.WriteLine($"- {p.GetType().Name} {p.Name} перешел из Hall в DevRoom");
+            }
+
             accessible.EnterDevRoom();
+            dept.humansInDevRoom.Add(accessible);
         }
         else
         {
-            Console.WriteLine($"Access to DevRoom is prohibited for: {person?.GetType().Name ?? "null"}");
+            Console.WriteLine($"Access to DevRoom is prohibited for: {getNameEntrant(person)}");
         }
+    }
+
+    public static string getNameEntrant(object person)
+    {
+        bool flag = false;
+        string name = person?.GetType().Name;
+        if (person is IHallAccessible hallPerson && flag == false)
+        {
+            name += " " + hallPerson.Name;
+            flag = true;
+        }
+
+        if (person is IDevRoomAccessible devRoomPerson && flag == false)
+        {
+            name += " " + devRoomPerson.Name;
+        }
+        
+        return name;
     }
 }
