@@ -22,14 +22,16 @@ Developer dev = new Developer("Сильный", "C#", 21, "Steve", 90000);
 Manager manager = new Manager(10, "AI проект", 24, "Alex", 150000);
 Client client = new Client("Jon", "Т-банк");
 
-SecurityGate.CheckDevRoomAccess(dev);     // → Developer Steve entered the dev room.
-SecurityGate.CheckHallAccess(dev);        // → Access to Hall is prohibited for: Developer
+Department department = new Department("CRM");
+department.AddEmployee(dev);
+department.AddEmployee(manager);
+department.AddClient(client);
 
-SecurityGate.CheckDevRoomAccess(manager); // → Manager Alex entered the dev room.
-SecurityGate.CheckHallAccess(manager);    // → Manager Alex entered the hall.
-
-SecurityGate.CheckDevRoomAccess(client);  // → Access to DevRoom is prohibited for: Client
-SecurityGate.CheckHallAccess(client);     // → Client Jon entered the hall.
+SecurityGate.EnterHall(client, department);     // → Client Jon entered the hall.
+SecurityGate.EnterHall(manager, department);    // → Manager Alex entered the hall.
+SecurityGate.EnterDevRoom(manager, department); // → Manager Alex moved from Hall to DevRoom. Manager Alex entered the dev room.
+SecurityGate.EnterHall(dev, department);        // → Access to Hall is prohibited for: Developer Steve.
+SecurityGate.EnterDevRoom(client, department);  // → Access to DevRoom is prohibited for: Client Jon.
 ```
 
 ## Установка и запуск
