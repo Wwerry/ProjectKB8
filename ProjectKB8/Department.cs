@@ -26,14 +26,14 @@ namespace ProjectKB8
         {
             Console.WriteLine($"\nRoom: Hall");
             Console.WriteLine("People in Hall:");
-            foreach (var person in humansInHall) Console.WriteLine($"- {person.Name} (Тип: {person.GetType().Name})");;
+            foreach (var person in humansInHall) Console.WriteLine($"- {person.Name} (Type: {person.GetType().Name})");;
         }
         
         public void ShowHumansInDevRoom()
         {
             Console.WriteLine($"\nRoom: DevRoom");
-            Console.WriteLine("People в DevRoom:");
-            foreach (var person in humansInDevRoom) Console.WriteLine($"- {person.Name} (Тип: {person.GetType().Name})");;
+            Console.WriteLine("People in DevRoom:");
+            foreach (var person in humansInDevRoom) Console.WriteLine($"- {person.Name} (Type: {person.GetType().Name})");;
         }
         
         public void ShowAll()
