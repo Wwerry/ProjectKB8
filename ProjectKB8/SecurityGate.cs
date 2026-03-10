@@ -18,7 +18,7 @@ public static class SecurityGate
         }
         else
         {
-            Console.WriteLine($"Access to Hall is prohibited for: {getNameEntrant(person)}");
+            Console.WriteLine($"Access to Hall is prohibited for: {GetNameEntrant(person)}");
         }
     }
 
