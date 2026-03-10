@@ -24,25 +24,25 @@ namespace ProjectKB8
         
         public void ShowHumansInHall()
         {
-            Console.WriteLine($"\nКомната: Hall");
-            Console.WriteLine("Люди в Hall:");
+            Console.WriteLine($"\nRoom: Hall");
+            Console.WriteLine("People in Hall:");
             foreach (var person in humansInHall) Console.WriteLine($"- {person.Name} (Тип: {person.GetType().Name})");;
         }
         
         public void ShowHumansInDevRoom()
         {
-            Console.WriteLine($"\nКомната: DevRoom");
-            Console.WriteLine("Люди в DevRoom:");
+            Console.WriteLine($"\nRoom: DevRoom");
+            Console.WriteLine("People в DevRoom:");
             foreach (var person in humansInDevRoom) Console.WriteLine($"- {person.Name} (Тип: {person.GetType().Name})");;
         }
         
         public void ShowAll()
         {
-            Console.WriteLine($"\nДепартамент: {Name}");
-            Console.WriteLine("Сотрудники:");
+            Console.WriteLine($"\nDepartment: {Name}");
+            Console.WriteLine("Employees:");
             foreach (var e in employees) e.PerformDuties();
 
-            Console.WriteLine("Клиенты:");
+            Console.WriteLine("Clients:");
             foreach (var c in clients) c.ShowInfo();
 
             Console.WriteLine("-------------------");
