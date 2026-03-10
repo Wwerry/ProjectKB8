@@ -42,7 +42,7 @@ public static class SecurityGate
         }
     }
 
-    public static string getNameEntrant(object person)
+    public static string GetNameEntrant(object person)
     {
         bool flag = false;
         string name = person?.GetType().Name;
