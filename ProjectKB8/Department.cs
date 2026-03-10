@@ -9,8 +9,8 @@ namespace ProjectKB8
 
         private readonly List<Employee> employees = new List<Employee>();
         private readonly List<Client> clients = new List<Client>();
-        internal readonly List<IHallAccessible> humansInHall = new List<IHallAccessible>();
-        internal readonly List<IDevRoomAccessible> humansInDevRoom = new List<IDevRoomAccessible>();
+        private readonly List<IHallAccessible> humansInHall = new List<IHallAccessible>();
+        private readonly List<IDevRoomAccessible> humansInDevRoom = new List<IDevRoomAccessible>();
         
         public Department(string name)
         {
