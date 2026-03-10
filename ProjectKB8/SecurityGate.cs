@@ -10,7 +10,7 @@ public static class SecurityGate
 
             if (person is IDevRoomAccessible p && dept.humansInDevRoom.Remove(p))
             {
-                Console.WriteLine($"- {getNameEntrant(p)} moved from DevRoom to Hall");
+                Console.WriteLine($"- {GetNameEntrant(p)} moved from DevRoom to Hall");
             }
 
             accessible.EnterHall();
