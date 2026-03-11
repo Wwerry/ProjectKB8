@@ -17,20 +17,28 @@ namespace ProjectKB8
             department.AddEmployee(dev);
             department.AddEmployee(manager);
             department.AddClient(client);
-            
+
+            Console.WriteLine("");
+            Console.WriteLine("=== Разрешённый доступ ===");
+
             SecurityGate.EnterHall(client, department);
             SecurityGate.EnterHall(manager, department);
+            SecurityGate.EnterDevRoom(dev, department);
+
+            Console.WriteLine("");
+            Console.WriteLine("=== Перемещение ===");
+
             SecurityGate.EnterDevRoom(manager, department);
             SecurityGate.EnterHall(manager, department);
-            SecurityGate.EnterHall(dev, department);
+        
+            Console.WriteLine("");
+            Console.WriteLine("=== Запрещённый доступ ===");
 
+            SecurityGate.EnterHall(dev, department); 
+            SecurityGate.EnterDevRoom(client, department);    
+                       
             Console.WriteLine("");
 
-            SecurityGate.EnterDevRoom(client, department); 
-            SecurityGate.EnterDevRoom(dev, department);    
-            
-            Console.WriteLine("");
-            
             department.ShowHumansInDevRoom();
             department.ShowHumansInHall();
             department.ShowAll();
