@@ -19,30 +19,30 @@ namespace ProjectKB8
         
         public void AddEmployee(Employee emp) => employees.Add(emp);
         public void AddClient(Client client) => clients.Add(client);
-        public void deleteEmployee(Employee emp) => employees.Remove(emp);
-        public void deleteClient(Client client) => clients.Remove(client);
+        public void RemoveEmployee(Employee emp) => employees.Remove(emp);
+        public void RemoveClient(Client client) => clients.Remove(client);
         
         public void ShowHumansInHall()
         {
-            Console.WriteLine($"\nКомната: Hall");
-            Console.WriteLine("Люди в Hall:");
-            foreach (var person in humansInHall) Console.WriteLine($"- {person.Name} (Тип: {person.GetType().Name})");;
+            Console.WriteLine($"\nRoom: Hall");
+            Console.WriteLine("People in Hall:");
+            foreach (var person in humansInHall) Console.WriteLine($"- {person.Name} (Type: {person.GetType().Name})");;
         }
         
         public void ShowHumansInDevRoom()
         {
-            Console.WriteLine($"\nКомната: DevRoom");
-            Console.WriteLine("Люди в DevRoom:");
-            foreach (var person in humansInDevRoom) Console.WriteLine($"- {person.Name} (Тип: {person.GetType().Name})");;
+            Console.WriteLine($"\nRoom: DevRoom");
+            Console.WriteLine("People in DevRoom:");
+            foreach (var person in humansInDevRoom) Console.WriteLine($"- {person.Name} (Type: {person.GetType().Name})");;
         }
         
         public void ShowAll()
         {
-            Console.WriteLine($"\nДепартамент: {Name}");
-            Console.WriteLine("Сотрудники:");
+            Console.WriteLine($"\nDepartment: {Name}");
+            Console.WriteLine("Employees:");
             foreach (var e in employees) e.PerformDuties();
 
-            Console.WriteLine("Клиенты:");
+            Console.WriteLine("Clients:");
             foreach (var c in clients) c.ShowInfo();
 
             Console.WriteLine("-------------------");

@@ -17,6 +17,6 @@ public class Client : IHallAccessible
     }
     public void ShowInfo()
     {
-        Console.WriteLine($"Клиент {Name} из {Company}");
+        Console.WriteLine($"Client {Name} from {Company}");
     }
 }

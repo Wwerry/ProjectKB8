@@ -10,7 +10,7 @@ public static class SecurityGate
 
             if (person is IDevRoomAccessible p && dept.humansInDevRoom.Remove(p))
             {
-                Console.WriteLine($"- {p.GetType().Name} {p.Name} moved from DevRoom to Hall");
+                Console.WriteLine($"- {GetNameEntrant(p)} moved from DevRoom to Hall");
             }
 
             accessible.EnterHall();
@@ -18,7 +18,7 @@ public static class SecurityGate
         }
         else
         {
-            Console.WriteLine($"Access to DevRoom is prohibited for: {getNameEntrant(person)}");
+            Console.WriteLine($"Access to Hall is prohibited for: {GetNameEntrant(person)}");
         }
     }
 
@@ -30,7 +30,7 @@ public static class SecurityGate
 
             if (person is IHallAccessible p && dept.humansInHall.Remove(p))
             {
-                Console.WriteLine($"- {p.GetType().Name} {p.Name} moved from Hall to DevRoom");
+                Console.WriteLine($"- {GetNameEntrant(p)} moved from Hall to DevRoom");
             }
 
             accessible.EnterDevRoom();
@@ -38,11 +38,11 @@ public static class SecurityGate
         }
         else
         {
-            Console.WriteLine($"Access to DevRoom is prohibited for: {getNameEntrant(person)}");
+            Console.WriteLine($"Access to DevRoom is prohibited for: {GetNameEntrant(person)}");
         }
     }
 
-    public static string getNameEntrant(object person)
+    public static string GetNameEntrant(object person)
     {
         bool flag = false;
         string name = person?.GetType().Name;
