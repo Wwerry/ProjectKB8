@@ -9,8 +9,10 @@ namespace ProjectKB8
 
         private readonly List<Employee> employees = new List<Employee>();
         private readonly List<Client> clients = new List<Client>();
-        internal readonly List<IHallAccessible> humansInHall = new List<IHallAccessible>();
-        internal readonly List<IDevRoomAccessible> humansInDevRoom = new List<IDevRoomAccessible>();
+        private readonly List<IDevRoomAccessible> _humansInDevRoom = new List<IDevRoomAccessible>();
+        private readonly List<IHallAccessible> _humansInHall = new List<IHallAccessible>();
+        public List<IDevRoomAccessible> HumansInDevRoom => _humansInDevRoom;
+        public List<IHallAccessible> HumansInHall => _humansInHall;
         
         public Department(string name)
         {
@@ -26,14 +28,14 @@ namespace ProjectKB8
         {
             Console.WriteLine($"\nRoom: Hall");
             Console.WriteLine("People in Hall:");
-            foreach (var person in humansInHall) Console.WriteLine($"- {person.Name} (Type: {person.GetType().Name})");;
+            foreach (var person in HumansInDevRoom) Console.WriteLine($"- {person.Name} (Type: {person.GetType().Name})");;
         }
         
         public void ShowHumansInDevRoom()
         {
             Console.WriteLine($"\nRoom: DevRoom");
             Console.WriteLine("People in DevRoom:");
-            foreach (var person in humansInDevRoom) Console.WriteLine($"- {person.Name} (Type: {person.GetType().Name})");;
+            foreach (var person in HumansInDevRoom) Console.WriteLine($"- {person.Name} (Type: {person.GetType().Name})");;
         }
         
         public void ShowAll()

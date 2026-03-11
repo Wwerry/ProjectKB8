@@ -6,15 +6,15 @@ public static class SecurityGate
     {
         if (person is IHallAccessible accessible)
         {
-            if (dept.humansInHall.Contains(accessible)) return;
+            if (dept.HumansInHall.Contains(accessible)) return;
 
-            if (person is IDevRoomAccessible p && dept.humansInDevRoom.Remove(p))
+            if (person is IDevRoomAccessible p && dept.HumansInDevRoom.Remove(p))
             {
                 Console.WriteLine($"- {GetNameEntrant(p)} moved from DevRoom to Hall");
             }
 
             accessible.EnterHall();
-            dept.humansInHall.Add(accessible);
+            dept.HumansInHall.Add(accessible);
         }
         else
         {
@@ -26,15 +26,15 @@ public static class SecurityGate
     {
         if (person is IDevRoomAccessible accessible)
         {
-            if (dept.humansInDevRoom.Contains(accessible)) return;
+            if (dept.HumansInDevRoom.Contains(accessible)) return;
 
-            if (person is IHallAccessible p && dept.humansInHall.Remove(p))
+            if (person is IHallAccessible p && dept.HumansInHall.Remove(p))
             {
                 Console.WriteLine($"- {GetNameEntrant(p)} moved from Hall to DevRoom");
             }
 
             accessible.EnterDevRoom();
-            dept.humansInDevRoom.Add(accessible);
+            dept.HumansInDevRoom.Add(accessible);
         }
         else
         {

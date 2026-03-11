@@ -12,7 +12,6 @@ namespace ProjectKB8
             Manager manager = new Manager(10, "AI project", 24, "Alex", 150000);
             Client client = new Client("Jon", "Т-bank");
             
-            Console.WriteLine("=== Department ===");
             Department department = new Department("CRM");
             department.AddEmployee(dev);
             department.AddEmployee(manager);
